@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content=<%= dataset.page_meta.meta_keywords %> />
+    <meta
+      name="description"
+      content=<%= dataset.page_meta.meta_description %>
+    />
+    <title><%= dataset.page_meta.title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="logo-container">
+            <a href="#" class="logo">Header / Logo</a>
+          </div>
+
+          <nav class="menu">
+            <ul class="menu__list">
+              <%= dataset.nav
+                .map((navObj) => {
+                  return `<li class="menu__list-item"><a href="${navObj.href}" class="menu__list-link">${navObj.text}</a></li>`;
+                })
+                .join("") %>
+            </ul>
+          </nav>
+
+          <div class="breadcrumb">
+            <ul class="breadcrumb__list"><%= dataset.breadcrumbs
+              .map((breadcrumbObj, index) => {
+                return index != dataset.breadcrumbs.length - 1
+                  ? `<li class="breadcrumb__list-item"><a href="${breadcrumbObj.href}" class="breadcrumb__list-link">${breadcrumbObj.text}</a></li><div>></div\>`
+                  : `<li class="breadcrumb__list-item">${breadcrumbObj.text}</li>`;
+              })
+              .join("") %></ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper container">
+      <main class="main">
+        <section class="content">
+          <div class="content__title">
+            <h1><%= dataset.page_meta.h1 %></h1>
+          </div>
+
+          <aside class="content__aside">
+            <div class="content__aside-inner">
+              <p class="content__aside-title">26 Results Found</p>
+              <hr />
+
+              <div class="content__aside-param">
+                <div class="dropdown content__dropdown-aside">
+                  <input type="checkbox" id="dropdown3" />
+                  <label class="dropdown__face" for="dropdown3">
+                    Param 1
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                  </ul>
+                </div>
+
+                <ul class="content__param-list">
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault1"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault1">
+                        value1
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault2"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault2">
+                        value2
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault3"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault3">
+                        value3
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault4"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault4">
+                        value4
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault5"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault5">
+                        value5
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="content__aside-param">
+                <div class="dropdown content__dropdown-aside">
+                  <input type="checkbox" id="dropdown4" />
+                  <label class="dropdown__face" for="dropdown4">
+                    Param 2
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                  </ul>
+                </div>
+                <ul class="content__param-list">
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        value 2_1
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        value 2_2
+                      </label>
+                    </div>
+                  </li>
+                  <li class="content__param-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault3"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        value 2_3
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="content__aside-param">
+                <div class="dropdown content__dropdown-aside">
+                  <input type="checkbox" id="dropdown5" />
+                  <label class="dropdown__face" for="dropdown5">
+                    Param 3
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                  </ul>
+                </div>
+                <div class="content__input-container">
+                  <input class="content__input-min" placeholder="min" />
+                  <input class="content__input-max" placeholder="max" />
+                </div>
+              </div>
+
+              <div class="content__aside-param">
+                <div class="dropdown content__dropdown-aside">
+                  <input type="checkbox" id="dropdown6" />
+                  <label class="dropdown__face" for="dropdown6">
+                    Sort options
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                  </ul>
+                </div>
+                <input class="content__input-keyword" placeholder="Keyword" />
+              </div>
+
+              <button class="content__aside-btn">SEARCH</button>
+            </div>
+          </aside>
+
+          <div class="content__posts">
+            <div class="content__posts-navigation">
+              <div class="content__navigation-pages">
+                <div class="content__pages-escape"><p>&#60;</p></div>
+                <a href="#"
+                  ><div class="content__pages-number"><p>1</p></div></a
+                >
+                <div class="content__pages-number"><p>2</p></div>
+                <div class="content__pages-escape"><p>&#62;</p></div>
+              </div>
+              <div class="content__navigation-dropdown">
+                <div><p>Sort by</p></div>
+                <div class="dropdown content__dropdown-posts">
+                  <input type="checkbox" id="dropdown1" />
+
+                  <label class="dropdown__face" for="dropdown1">
+                    Sort options
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                    <li>value3</li>
+                    <li>value4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="content__posts-container">
+              <%= dataset.stock
+              .map((stockObj) => {
+                return `<article class="content__posts-article">
+                <div class="content__article-img" style="content: '';
+                background-image: url(./images/${stockObj.image});
+                width: 224px;
+                height: 168px;
+                background-repeat: no-repeat;
+                background-size: cover;">
+                </div>
+                <div class="content__article-inner">
+                  <div class="content__article-info">
+                  <h3 class="content__info-title"><a href="${stockObj.href}">${stockObj.title}</a></h3>
+                  <p class="content__info-price">${stockObj.price_currency} ${stockObj.price}</p>
+                  </div>
+                  <div class="content__info-container">
+                    <ul class="content__info-list">
+                      <li class="content__info-item">Make: ${stockObj.make}</li>
+                      <li class="content__info-item">Model: ${stockObj.model}</li>
+                      <li class="content__info-item">
+                        Type: ${stockObj.type}
+                      </li>
+                      <li class="content__info-item">Power: ${stockObj.power} ${stockObj.power_measure}</li>
+                      <li class="content__info-item">Payload: ${stockObj.payload}</li>
+                      <li class="content__info-item">Gross weight: ${stockObj.gross_weight}</li>
+                    </ul>
+                    <ul class="content__tags-list">
+                      <div class="content__tag-container">
+                        <li class="content__tags-item">${stockObj.year}</li>
+                      </div>
+                      <div class="content__tag-container">
+                        <li class="content__tags-item">${stockObj.mileage} ${stockObj.mileage_measure}</li>
+                      </div>
+                      <div class="content__tag-container">
+                        <li class="content__tags-item">${stockObj.axle_configuration}</li>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </article>`;
+              })
+              .join("") %>
+            </div>
+
+            <div class="content__posts-navigation">
+              <div class="content__navigation-pages">
+                <div class="content__pages-escape"><p>&#60;</p></div>
+                <div class="content__pages-number"><p>1</p></div>
+                <div class="content__pages-number"><p>2</p></div>
+                <div class="content__pages-escape"><p>&#62;</p></div>
+              </div>
+              <div class="content__navigation-dropdown">
+                <div><p>Sort by</p></div>
+                <div class="dropdown content__dropdown-posts">
+                  <input type="checkbox" id="dropdown2" />
+                  <label class="dropdown__face" for="dropdown2">
+                    Sort options
+                  </label>
+                  <div class="dropdown__arrow"></div>
+
+                  <ul class="dropdown__items">
+                    <li>value1</li>
+                    <li>value2</li>
+                    <li>value3</li>
+                    <li>value4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="content__posts-text">
+              <%= dataset.page_text
+              .map((textObj) => {
+                return `<p>${textObj.content}</p>`;
+              })
+              .join("") %>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="container">
+            <div class="footer__inner">
+              <div class="footer__info">
+                <h3 class="footer__info-title">Logo / Company Name</h3>
+                <div class="footer__info-adress">
+                  <p>
+                    Company Adress: Lorem ipsum dolor sit amet 18600,
+                    Netherlands
+                  </p>
+                </div>
+                <div class="footer__info-phone"><p>+38 958 755-00-00</p></div>
+                <div class="footer__info-sociale">
+                  <a href="#" class="footer__social-link"></a
+                  ><a href="#" class="footer__social-link"></a
+                  ><a href="#" class="footer__social-link"></a
+                  ><a href="#" class="footer__social-link"></a>
+                </div>
+              </div>
+              <p class="footer__description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
+                quos ullam atque accusantium ratione molestias soluta, provident
+                nobis, assumenda dolorum voluptas incidunt inventore quia
+                reiciendis quis. Quis quo molestias repellat.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <div class="container">
+            <p>
+              © 2019 - <a href="#">Privacy Policy</a> -
+              <a href="#">Terms and Conditions</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
