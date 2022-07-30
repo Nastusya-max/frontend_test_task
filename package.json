@@ -1,5 +1,5 @@
 {
-  "name": "Test-project",
+  "name": "test-project",
   "scripts": {
     "build": "webpack",
     "dev": "webpack --watch --env develop"
